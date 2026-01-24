@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# apt autoremove
+# dnf autoremove
+flatpak remove --unused
+rm -rf ~/.cache/*
