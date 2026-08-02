@@ -1,4 +1,9 @@
 #!/usr/bin/bash
 git add --all
-git commit -m "commit made"
+if $1 -eq ""; then
+	git commit -m "$1"
+else
+	git commit -m 'commit made'
+fi
+
 git push origin main
